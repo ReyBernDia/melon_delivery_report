@@ -50,8 +50,10 @@
 # the_file.close()
 
 
-def open_delivery_files(desired_file):
-    """Open file and return melon name, count, amount dollar worth"""
+def open_delivery_files(day_number, desired_file):
+    """Given day number & delivery file, returns report"""
+    
+    print("-- Day ", day_number, "--")
     #open file for Day 1 
     the_file = open(desired_file)
     #iterate through lines in opened file 
@@ -68,21 +70,21 @@ def open_delivery_files(desired_file):
         #print out report for CEO calling variables melon, count, amount
         print("Delivered {} {}s for total of ${}".format(
             count, melon, amount))
-    return "End of the summary for this day."
+    return "-- End of the summary for this day. --"
     #close opened file     
     the_file.close()
 
 
-print("Day 1")
-day_1 = open_delivery_files("um-deliveries-20140519.txt")
+
+day_1 = open_delivery_files(1, "um-deliveries-20140519.txt")
 print(day_1)
 
-print("Day 2")
-day_2 = open_delivery_files("um-deliveries-20140520.txt")
+
+day_2 = open_delivery_files(2, "um-deliveries-20140520.txt")
 print(day_2)
 
-print("Day 3")
-day_3 = open_delivery_files("um-deliveries-20140521.txt")
+
+day_3 = open_delivery_files(3, "um-deliveries-20140521.txt")
 print(day_3)
 
 
